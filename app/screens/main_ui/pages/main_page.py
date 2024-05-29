@@ -377,7 +377,7 @@ class MainPage(ft.Container):
         return self.ui_contactpage
     
     def select_ui(self):
-        print(self.page.route)
+        # print(self.page.route)
         if self.page.route == '/' or self.page.route == '': #* Path after first slash is empty
             return self.init_ui_intro_content()
         

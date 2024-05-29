@@ -1,10 +1,10 @@
 {
     "detail": "Get User By Token",
     "data": {
-        "username": "lecturer1",
-        "email": "lecturer1@gmail.com",
-        "phone": "111111111",
-        "last_login": null
+        "username": "adminanhtudev",
+        "email": "techdev.td1111@gmail.com",
+        "phone": "0767449819",
+        "last_login": "2024-05-25T03:09:12Z"
     },
     "code": "res_success"
 }

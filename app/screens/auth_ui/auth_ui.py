@@ -101,6 +101,7 @@ class AuthUI(ft.Container):
         )
         
     def on_submit(self, event):
+        # print('Sign in button clicked')
         # Disable the button and show loading indicator
         self.signin_btn.visible = False
         self.loading_indicator.visible = True
@@ -110,32 +111,27 @@ class AuthUI(ft.Container):
         username = self.username_txtfield.value
         password = self.password_txtfield.value
         
-        if LocalStore.get_data('access', 'token') == None:
+        # Fetch token
+        if AuthAPI.check_auth() == False:
             data_fetch_token = AuthAPI.get_token({
                 'username': username,
                 'password': password
             })
             LocalStore.set_data(data_fetch_token, 'token')
-            # print(1)
-        else:
-            # print(2)
-            ...
+
+
+
         token = LocalStore.get_data(key='access', filename='token')
-        
-        if LocalStore.get_data('data', 'profile') == None:
-            data_fetch_profile = AuthAPI.get_user_by_token(token)
-            LocalStore.set_data(data_fetch_profile, 'profile')
-            # print(3)
-        else:
-            # print(4)
-            ...
+        print('Token fetched', token)
+        data_fetch_profile = AuthAPI.get_user_by_token(token)
+        LocalStore.set_data(data_fetch_profile, 'profile')
+
         profile = LocalStore.get_data(key='data', filename='profile')
-        # print(profile)
         try:
             if profile and profile.get('username') == username:
-                AuthHook.set_authenticated(profile)
+                print('Login successful')
                 self.page.go('/')
-            ...
+                AuthHook.set_authenticated(profile)
         except:
             pass
         finally:

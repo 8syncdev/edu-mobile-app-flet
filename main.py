@@ -32,7 +32,6 @@ def main(page: ft.Page):
     }
     
     
-    auth_ui = AuthUI()
 
     #* My custom for app_router
     app_router = {
@@ -46,7 +45,7 @@ def main(page: ft.Page):
         '/sign_in': ft.View(
             "/sign_in",
             [
-                auth_ui
+                AuthUI(page=page)
             ],
             **view_style
         ),
@@ -98,9 +97,8 @@ def main(page: ft.Page):
     page.on_route_change = route_change
 
     #* Check Auth before go to MainUI
-    if page.route == "/" and StateMainApp.count==0 and AuthAPI.check_auth() == False:
+    if page.route == "/" and AuthAPI.check_auth() == False:
         page.go("/sign_in")
-        StateMainApp.count+=1
     else:
         page.go(page.route)
 
