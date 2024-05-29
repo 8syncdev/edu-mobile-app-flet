@@ -1,0 +1,121 @@
+{
+    "data": {
+        "links": {
+            "next": "https://8sync-anhtudev-be.vercel.app/pbkdf2_sha256390000jwfsotswr778gvfsh7wj7fnjacn7hmzwxfbd9cjxpabqqinw0ug2gvi494rrg8m/courses/?page=2",
+            "previous": null
+        },
+        "count": 14,
+        "results": [
+            {
+                "id": 1,
+                "title": "Next.js Fullstack Framework",
+                "description": "Khóa học này giúp bạn học cách phát triển ứng dụng web fullstack bằng Next.js, một framework React mạnh mẽ. Bạn sẽ bắt đầu với các khái niệm cơ bản như routing, server-side rendering (SSR), và cấu trúc dự án. Sau đó, bạn sẽ tiến đến các chủ đề nâng cao như API routes, authentication, và triển khai ứng dụng trên các nền tảng cloud. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn xây dựng các ứng dụng web hiệu quả và hiện đại.",
+                "price": 190.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "nextjs-fullstack-framework"
+            },
+            {
+                "id": 2,
+                "title": "Django Fullstack Framework",
+                "description": "Khóa học này giúp bạn học cách phát triển ứng dụng web fullstack bằng Django, một framework Python mạnh mẽ. Bắt đầu với các khái niệm cơ bản như mô hình MVC, ORM, và admin interface, khóa học sẽ hướng dẫn bạn qua các chủ đề như user authentication, REST API, và deployment. Khóa học này đặc biệt chú trọng đến việc xây dựng các ứng dụng web bảo mật và hiệu quả. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn trở thành một lập trình viên Django chuyên nghiệp.",
+                "price": 180.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "django-fullstack-framework"
+            },
+            {
+                "id": 3,
+                "title": "Python Programming",
+                "description": "Khóa học này sẽ giúp bạn học cách lập trình bằng ngôn ngữ Python từ cơ bản đến nâng cao. Bạn sẽ bắt đầu với các khái niệm cơ bản như cú pháp, kiểu dữ liệu, và lệnh điều khiển. Sau đó, khóa học sẽ đi sâu vào các chủ đề như xử lý chuỗi, đối tượng và lập trình hàm. Đặc biệt, khóa học sẽ bao gồm các ứng dụng thực tế của Python trong phân tích dữ liệu, web development và automation. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn trở thành một lập trình viên Python có kỹ năng.",
+                "price": 130.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "python-programming"
+            },
+            {
+                "id": 4,
+                "title": "C++ Programming",
+                "description": "Khóa học này nhằm mục đích giúp bạn học cách lập trình bằng ngôn ngữ C++. Bắt đầu từ những kiến thức cơ bản như cú pháp, cấu trúc dữ liệu, và lệnh điều khiển, khóa học sau đó sẽ tiến xa hơn vào các chủ đề nâng cao như lập trình hướng đối tượng, quản lý bộ nhớ, và template. Đặc biệt, khóa học sẽ tập trung vào các kỹ thuật tối ưu hóa hiệu suất và quản lý tài nguyên hiệu quả. Bằng cách thực hành các bài tập và dự án thực tế, bạn sẽ trở thành một lập trình viên C++ tự tin và chuyên nghiệp.",
+                "price": 150.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "c-programming"
+            },
+            {
+                "id": 5,
+                "title": "Java Programming",
+                "description": "Trong khóa học này, bạn sẽ học cách lập trình bằng ngôn ngữ Java, từ các kiến thức cơ bản đến các khái niệm nâng cao. Bạn sẽ bắt đầu với cú pháp cơ bản, kiểu dữ liệu, và lệnh điều khiển. Khóa học sẽ đi sâu vào các khái niệm quan trọng như lập trình hướng đối tượng, xử lý ngoại lệ, và xử lý chuỗi. Ngoài ra, bạn sẽ học cách làm việc với các thư viện Java quan trọng và phát triển ứng dụng đa nền tảng. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn xây dựng nền tảng vững chắc trong lập trình Java.",
+                "price": 180.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "java-programming"
+            },
+            {
+                "id": 6,
+                "title": "Go Programming",
+                "description": "Khóa học này sẽ giúp bạn học cách lập trình bằng ngôn ngữ Go, được phát triển bởi Google cho các ứng dụng hiệu suất cao và dễ dàng bảo trì. Bạn sẽ bắt đầu với các khái niệm cơ bản như cú pháp, kiểu dữ liệu, và lệnh điều khiển. Sau đó, khóa học sẽ đi sâu vào các chủ đề như concurrent programming, xử lý lỗi, và xây dựng ứng dụng web với Go. Đặc biệt, khóa học sẽ tập trung vào cách tối ưu hóa và phát triển các hệ thống phân tán hiệu quả. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn thành thạo Go.",
+                "price": 170.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "go-programming"
+            },
+            {
+                "id": 7,
+                "title": "React JS/TS",
+                "description": "Khóa học này giúp bạn học cách phát triển ứng dụng web hiện đại bằng React, sử dụng cả JavaScript và TypeScript. Bắt đầu từ các khái niệm cơ bản như components, state, và props, khóa học sẽ dẫn bạn qua các chủ đề nâng cao như hooks, context API, và quản lý state với Redux. Bạn sẽ học cách tích hợp React với các công nghệ backend và xây dựng các ứng dụng fullstack hoàn chỉnh. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn thành thạo React JS/TS và phát triển các ứng dụng web linh hoạt và hiệu quả.",
+                "price": 160.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "react-jsts"
+            },
+            {
+                "id": 8,
+                "title": "Python DSA",
+                "description": "Khóa học này sẽ giúp bạn hiểu rõ về cấu trúc dữ liệu và thuật toán (DSA) bằng ngôn ngữ Python. Bạn sẽ học các khái niệm cơ bản như danh sách, ngăn xếp, hàng đợi, và các thuật toán sắp xếp. Khóa học cũng sẽ đi sâu vào các thuật toán tìm kiếm, đồ thị, và lập trình động. Đặc biệt, khóa học sẽ tập trung vào việc giải quyết các bài toán phức tạp và tối ưu hóa giải pháp. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn ứng dụng các kiến thức DSA vào các bài toán thực tế và nâng cao khả năng giải quyết vấn đề.",
+                "price": 140.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "python-dsa"
+            },
+            {
+                "id": 9,
+                "title": "Python Tkinter",
+                "description": "Khóa học này giúp bạn học cách xây dựng ứng dụng GUI bằng Python và Tkinter. Bạn sẽ bắt đầu với các khái niệm cơ bản như widgets, event handling, và layout management. Sau đó, khóa học sẽ dẫn bạn qua các chủ đề nâng cao như tạo các ứng dụng đa cửa sổ, quản lý trạng thái, và tích hợp với cơ sở dữ liệu. Đặc biệt, khóa học sẽ hướng dẫn bạn cách xây dựng các ứng dụng GUI chuyên nghiệp và trực quan. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn thành thạo Python Tkinter và phát triển các ứng dụng GUI hấp dẫn.",
+                "price": 150.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "python-tkinter"
+            },
+            {
+                "id": 10,
+                "title": "FastAPI Best Performance",
+                "description": "Khóa học này sẽ giúp bạn học cách phát triển ứng dụng web hiệu suất cao bằng FastAPI, một framework Python hiện đại và mạnh mẽ. Bạn sẽ bắt đầu với các khái niệm cơ bản như routing, request handling, và dependency injection. Khóa học sẽ đi sâu vào các chủ đề như asynchronous programming, testing, và deployment. Đặc biệt, khóa học sẽ tập trung vào các kỹ thuật tối ưu hóa hiệu suất và bảo mật cho ứng dụng web của bạn. Thực hành qua các bài tập và dự án thực tế sẽ giúp bạn tối ưu hóa và nâng cao hiệu suất ứng dụng của mình, biến bạn thành một chuyên gia FastAPI.",
+                "price": 200.0,
+                "instructor_name": " ",
+                "extent_name": "foudation",
+                "created_at": "2024-05-16T08:06:27.943000+07:00",
+                "updated_at": "2024-05-16T08:06:27.943000+07:00",
+                "slug": "fastapi-best-performance"
+            }
+        ]
+    }
+}
