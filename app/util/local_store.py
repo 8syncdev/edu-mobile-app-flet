@@ -33,11 +33,12 @@ class LocalStore:
             
     @staticmethod
     def clear_data(filename: LocalStoreType):
-        with open(f'{filename}.json', 'w') as file:
-            json.dump({}, file)
+        with open(f'{filename}', 'w', encoding='utf-8') as file:
+            json.dump({}, file, ensure_ascii=False, indent=4)
             
     @staticmethod
     def clear_all_files():
         for file in os.listdir(LocalStore.base_dir):
             if file.endswith('.json'):
-                LocalStore.clear_data(file)
+                # 'Clearing', file)
+                LocalStore.clear_data(LocalStore.base_dir / file)

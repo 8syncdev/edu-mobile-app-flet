@@ -5,10 +5,10 @@ import os
 #     if item.endswith(".png") or item.endswith(".jpg") or item.endswith(".jpeg"):
 #         with open("./data.txt", "a", encoding='utf-8') as f:
 #             f.write(f'''import {item.replace('-', '').replace('.png','').lower()}Img from '@/public/assets/images/tech/{item}';''' + '\n')
-        # print(f'''import {item.replace('-', '').replace('.png','').lower()}Img from '@/public/assets/images/tech/{item}';''')
+        # f'''import {item.replace('-', '').replace('.png','').lower()}Img from '@/public/assets/images/tech/{item}';''')
 
 # with open("./data.txt", "w", encoding='utf-8') as f:
-#     print(f.read())
+#     f.read())
 #-------------------
 list_icons = []
 with open('./data.txt', 'r', encoding='utf-8') as f:

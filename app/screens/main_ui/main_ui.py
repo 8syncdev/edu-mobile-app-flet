@@ -2,7 +2,8 @@ from app import (
     ft,
     BASE_DIR,
     PHONE_HEIGHT,
-    PHONE_WIDTH
+    PHONE_WIDTH,
+    TURN_ON_SCREEN
 )
 
 from app.style import *
@@ -16,17 +17,25 @@ from typing import (
 from app.screens.main_ui.pages.main_page import MainPage
 from app.screens.main_ui.pages.fg_page import FgPage
 
+from app.schema import (
+    TStaticTemplate
+)
+
 
 
 
 class MainUI(ft.Container):
-    def __init__(self, page: Optional[ft.Page] = None, **kwargs):
+    def __init__(self, 
+                 page: Optional[ft.Page] = None, 
+                 static_template: TStaticTemplate = None,
+                 **kwargs):
         super().__init__(**kwargs)
         self.height = PHONE_HEIGHT
         self.width = PHONE_WIDTH
         self.page = page
+        self.static_template = static_template
         self.bgcolor = BG
-        self.border_radius=30
+        self.border_radius=30 if TURN_ON_SCREEN else 0
         self.content = ft.Container(
             height=PHONE_HEIGHT,
             width=PHONE_WIDTH,
@@ -37,7 +46,7 @@ class MainUI(ft.Container):
                         controls=[
                             ft.Row(
                                 controls=[
-                                    self.init_ui_homepage()
+                                    self.init_ui_mainpage()
                                 ],
                                 alignment='end',
                                 width=PHONE_WIDTH,
@@ -73,14 +82,14 @@ class MainUI(ft.Container):
                     ),
                 ),
                 ft.Container(
-                    on_click=lambda e: self.page.go('/course/3'),
+                    on_click=lambda e: self.page.go('/faq'),
                     content=ft.Icon(
                         ft.icons.CONTACT_SUPPORT_OUTLINED,
                         **style_navbarbottom
                     ),
                 ),
                 ft.Container(
-                    on_click=lambda e: self.select_route(),
+                    on_click=lambda e: self.page.go('/profile'),
                     content=ft.Icon(
                         ft.icons.SETTINGS,
                         **style_navbarbottom
@@ -131,8 +140,8 @@ class MainUI(ft.Container):
         return self.container_fgpage
     
 
-    def init_ui_homepage(self):
-        self.container_mainpage = MainPage(master=self, page=self.page)
+    def init_ui_mainpage(self):
+        self.container_mainpage = MainPage(master=self, page=self.page, static_template=self.static_template)
         return self.container_mainpage
     
     def shrink(self, e):
@@ -162,4 +171,3 @@ class MainUI(ft.Container):
 
     def select_route(self):
         route_name = self.page.route
-        print(route_name)

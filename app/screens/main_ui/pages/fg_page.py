@@ -21,6 +21,10 @@ from app.hook import (
     AuthHook
 )
 
+from app.api import (
+    CommonAPI
+)
+
 
 CircleCustom = ft.Stack(
     controls=[
@@ -143,26 +147,32 @@ class FgPage(ft.Container):
                                     text="Trang chủ",
                                     icon=ft.icons.HOME,
                                     **style_button_nav,
-                                    on_click=lambda e: self.navigate_to('/')
+                                    on_click=lambda e: self.page.go('/')
                                 ),
                                 ft.ElevatedButton(
                                     text="Khóa học",
                                     icon=ft.icons.BOOKMARK,
                                     **style_button_nav,
-                                    on_click=lambda e: self.navigate_to('/course/3')
+                                    on_click=lambda e: self.page.go('/course/3')
                                 ),
                                 ft.ElevatedButton(
                                     text="Liên hệ",
                                     icon=ft.icons.MAIL,
                                     **style_button_nav,
-                                    on_click=lambda e: self.navigate_to('/contact'),
+                                    on_click=lambda e: self.page.go('/contact'),
                                 ),
                                 ft.ElevatedButton(
                                     text="Bio",
                                     icon=ft.icons.WORK_OUTLINE,
                                     **style_button_nav,
-                                    on_click=lambda e: self.navigate_to('/contact'),
+                                    on_click=lambda e: self.page.go('/bio'),
                                 ),
+                                ft.ElevatedButton(
+                                    text="Dashboard",
+                                    icon=ft.icons.ADMIN_PANEL_SETTINGS,
+                                    **style_button_nav,
+                                    on_click=lambda e: self.page.go('/dashboard'),
+                                ) if CommonAPI.check_admin_role() else ft.Text(''),
                             ]
                         ),
                         ft.Column(
@@ -171,7 +181,7 @@ class FgPage(ft.Container):
                                     text="Đăng xuất",
                                     icon=ft.icons.LOGOUT,
                                     **style_button_nav,
-                                    on_click=lambda e: self.navigate_to('/')
+                                    on_click=lambda e: self.handle_logout(),
                                 ),
                                 ft.Container(
                                     content=ft.Image(
@@ -183,21 +193,24 @@ class FgPage(ft.Container):
                                     controls=[
                                         ft.Container(
                                             content=ft.Image(
-                                                src='admin/contact/facebook.png',
+                                                src='admin/contact/github.png',
                                                 height=60
-                                            )
+                                            ),
+                                            on_click=lambda e: self.page.launch_url('https://github.com/8syncdev')
                                         ),
                                         ft.Container(
                                             content=ft.Image(
                                                 src='admin/contact/tiktok.png',
                                                 height=60
-                                            )
+                                            ),
+                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')
                                         ),
                                         ft.Container(
                                             content=ft.Image(
-                                                src='admin/contact/youtube.png',
+                                                src='admin/contact/web.png',
                                                 height=60
-                                            )
+                                            ),
+                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')
                                         ),
                                     ],
                                     alignment='center',
@@ -223,10 +236,7 @@ class FgPage(ft.Container):
         e.control.icon_color = PRIORITY if e.data=='true' else BG_SEC1
         e.control.update()
 
-    def navigate_to(self, 
-            path_route: Optional[Literal[
-                '/',
-            ]]='/',
-        ):
-        self.page.go(path_route)
+    def handle_logout(self):
+        LocalStore.clear_all_files()
+        self.page.go('/sign-in')
             

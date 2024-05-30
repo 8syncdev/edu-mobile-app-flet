@@ -64,5 +64,15 @@ class AuthAPI:
                 return True
         else:
             return False
+        
+    @staticmethod
+    def sign_up(payload: dict):
+        response = post(f'{DOMAIN_API}/api-view/sign-up/', json=payload)
+        return response.json()
+    
+    @staticmethod
+    def forgot_password(payload: dict):
+        response = get(f'{DOMAIN_API}/api-view/common/forgot-password/', json=payload)
+        return response.json()
 
     
