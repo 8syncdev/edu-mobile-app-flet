@@ -53,6 +53,8 @@ def main(page: ft.Page):
     
 
     '''
+        Author: : Đinh Thành Đức
+        ID: 21110765
         - app_router: A list of routes for the main application.
         - auth_router: A list of routes related to authentication
     '''
@@ -76,6 +78,10 @@ def main(page: ft.Page):
         '''
             Author: Nguyễn Phương Anh Tú
             ID: 21110105
+            Author: : Đinh Thành Đức
+            ID: 21110765
+            Author: : Lê Quốc Thắng
+            ID: 21110799
             - route_change(event: ft.RouteChangeEvent): A function that is called each time the route changes.
             - page.views.clear(): Clear the views on the page.
             - page.overlay.clear(): Clear the overlay on the page.
