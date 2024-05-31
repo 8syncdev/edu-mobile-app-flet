@@ -94,10 +94,18 @@ def main(page: ft.Page):
             - page.update(): Update the page with the new views.
         '''
         page.views.clear() #* Optimized for clear views
-        if len(page.overlay) > 0:
+        if len(page.overlay) > 0: #* Check if overlay is not empty
+            '''
+                Author: Nguyễn Phương Anh Tú
+                ID: 21110105
+            '''
             page.overlay.clear()
         troute = ft.TemplateRoute(page.route)
-        if page.route in auth_router:
+        if page.route in auth_router: #* Check if the current route is in the auth_router list
+            '''
+                Author: Nguyễn Phương Anh Tú
+                ID: 21110105
+            '''
             page.views.append(ft.View(
                 page.route,
                 [
@@ -106,6 +114,10 @@ def main(page: ft.Page):
                 **view_style
             ))
         elif page.route in app_router:
+            '''
+                Author: Nguyễn Phương Anh Tú
+                ID: 21110105
+            '''
             page.views.append(ft.View(
                 page.route,
                 [
@@ -114,7 +126,11 @@ def main(page: ft.Page):
                 **view_style
             ))
         #* Extent Dynamic Route
-        elif troute.match('/course/:course_id'):
+        elif troute.match('/course/:course_id'): #* Check if the route matches a course ID
+            '''
+                Author: : Lê Quốc Thắng
+                ID: 21110799
+            '''
             page.views.append(ft.View(
                 f"/course/{troute.course_id}",
                 [
@@ -122,7 +138,11 @@ def main(page: ft.Page):
                 ],
                 **view_style
             ))
-        elif troute.match('/lesson/:lesson_id'):
+        elif troute.match('/lesson/:lesson_id'): #* Check if the route matches a lesson ID
+            '''
+                Author: : Đinh Thành Đức
+                ID: 21110765
+            '''
             page.views.append(ft.View(
                 f"/lesson/{troute.lesson_id}",
                 [
@@ -130,7 +150,11 @@ def main(page: ft.Page):
                 ],
                 **view_style
             ))
-        elif troute.match('/detail-lesson/:detail_lesson_id'):
+        elif troute.match('/detail-lesson/:detail_lesson_id'): #* Check if the route matches a detail lesson ID
+            '''
+                Author: : Đinh Thành Đức
+                ID: 21110765
+            '''
             page.views.append(ft.View(
                 f"/detail-lesson/{troute.detail_lesson_id}",
                 [
