@@ -1,9 +1,15 @@
+'''
+Author: Nguyễn Phương Anh Tú
+ID: 21110105
+'''
+from typing import Optional, Literal
 
-
-from typing import (
-    Optional,
-    Literal
-)
-#* Type for name routing:
-
-TStaticTemplate = Optional[Literal['intro', 'contact', 'bio']]
+# Define a type for static template routing
+TStaticTemplate = Optional[Literal[
+    'intro', 
+    'contact', 
+    'bio',
+    'dashboard',
+    'faq',
+    'profile',
+]]

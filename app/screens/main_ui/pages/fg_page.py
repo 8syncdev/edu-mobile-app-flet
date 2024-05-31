@@ -1,65 +1,74 @@
-
+# Import necessary modules and libraries
 from app import (
-    ft,
-    BASE_DIR,
-    PHONE_HEIGHT,
-    PHONE_WIDTH
+    ft,  # Importing ft module from the app package
+    BASE_DIR,  # Base directory path
+    PHONE_HEIGHT,  # Height of the phone screen
+    PHONE_WIDTH  # Width of the phone screen
 )
 
-from app.style import *
+from app.style import *  # Importing style settings from the app package
 
-from typing import (
+from typing import (  # Importing typing module for type hints
     Optional,
     Literal
 )
 
-from app.util import (
+from app.util import (  # Importing LocalStore module from the app package
     LocalStore
 )
 
-from app.hook import (
+from app.hook import (  # Importing AuthHook module from the app package
     AuthHook
 )
 
-from app.api import (
+from app.api import (  # Importing CommonAPI module from the app package
     CommonAPI
 )
 
-
+'''
+    Author: Nguyễn Phương Anh Tú
+    ID: 21110105
+    Main Purpose:
+    => Define the custom UI components for avatar of the user profile.
+'''
+# Custom circle UI component
 CircleCustom = ft.Stack(
     controls=[
-        ft.Container(
-        width=100,
-        height=100,
-        border_radius=50,
-        bgcolor='white12'
+        ft.Container(  # Outer container for the circle
+            width=100,  # Width of the circle
+            height=100,  # Height of the circle
+            border_radius=50,  # Border radius for the circle (making it a circle)
+            bgcolor='white12'  # Background color of the circle
         ),
-        ft.Container(
-            gradient=ft.SweepGradient(
-                center=ft.alignment.center,
-                start_angle=0.0,
-                end_angle=3,
-                stops=[0.5,0.5],
-            colors=['#00000000', BG_SEC1],
+        ft.Container(  # Inner container for the circle (with gradient)
+            gradient=ft.SweepGradient(  # Gradient settings
+                center=ft.alignment.center,  # Center alignment for the gradient
+                start_angle=0.0,  # Start angle of the gradient
+                end_angle=3,  # End angle of the gradient
+                stops=[0.5, 0.5],  # Gradient stops
+                colors=['#00000000', BG_SEC1],  # Gradient colors
             ),
-            width=100,
-            height=100,
-            border_radius=50,
-            content=ft.Row(alignment='center',
+            width=100,  # Width of the inner container
+            height=100,  # Height of the inner container
+            border_radius=50,  # Border radius for the inner container (making it a circle)
+            content=ft.Row(alignment='center',  # Row layout for content alignment
                 controls=[
-                    ft.Container(
-                        padding=ft.padding.all(5),
-                        bgcolor=BG,
-                        width=90,height=90,
-                        border_radius=50,
-                        content=ft.Container(
-                            bgcolor=FG,
-                            height=80,width=80,
-                            border_radius=40,
-                            content=ft.Image(
-                                src='brand/brand-14.png',
-                                width=80,height=80, 
-                                fit=ft.ImageFit.COVER
+                    ft.Container(  # Container for the circle content
+                        padding=ft.padding.all(5),  # Padding around the content
+                        bgcolor=BG,  # Background color of the container
+                        width=90,  # Width of the container
+                        height=90,  # Height of the container
+                        border_radius=50,  # Border radius for the container (making it a circle)
+                        content=ft.Container(  # Inner container for the circle content
+                            bgcolor=FG,  # Background color of the inner container
+                            height=80,  # Height of the inner container
+                            width=80,  # Width of the inner container
+                            border_radius=40,  # Border radius for the inner container (making it a circle)
+                            content=ft.Image(  # Image component for the circle content
+                                src='brand/brand-14.png',  # Image source
+                                width=80,  # Width of the image
+                                height=80,  # Height of the image
+                                fit=ft.ImageFit.COVER  # Fit mode for the image
                             ),
                         )
                     )
@@ -68,175 +77,193 @@ CircleCustom = ft.Stack(
         ),
       
     ]
-  )
+)
 
-
-
+# FgPage class definition for profile page UI component
 class FgPage(ft.Container):
+    '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
+        Main Purpose:
+        => Define the custom UI component for the profile page.
+    '''
     def __init__(self, 
-                 master: Optional[ft.Container] = None, 
-                 page: Optional[ft.Page] = None,
-                 **kwargs
+                 master: Optional[ft.Container] = None,  # Master container
+                 page: Optional[ft.Page] = None,  # Page container
+                 **kwargs  # Additional keyword arguments
                 ):
-        super().__init__(**kwargs)
-        self.master = master #* dont use parent, because it is default property of the container
-        self.page = page
-        self.height = PHONE_HEIGHT
-        self.width = PHONE_WIDTH
-        self.bgcolor = BG
-        self.border_radius=30
-        self.padding = ft.padding.only(left=10,top=20,right=140)
-        self.animate = ft.animation.Animation(600, ft.AnimationCurve.DECELERATE)
-        self.animate_scale = ft.animation.Animation(400, ft.AnimationCurve.DECELERATE)
+        super().__init__(**kwargs)  # Initialize the container
+        self.master = master  # Master container reference
+        self.page = page  # Page container reference
+        self.height = PHONE_HEIGHT  # Set height of the container
+        self.width = PHONE_WIDTH  # Set width of the container
+        self.bgcolor = BG  # Set background color of the container
+        self.border_radius = 30  # Set border radius of the container
+        self.padding = ft.padding.only(left=10, top=20, right=140)  # Set padding of the container
+        self.animate = ft.animation.Animation(600, ft.AnimationCurve.DECELERATE)  # Animation settings
+        self.animate_scale = ft.animation.Animation(400, ft.AnimationCurve.DECELERATE)  # Scale animation settings
 
-        self.size_fgpage = PHONE_WIDTH - 140
-        self.content = ft.Column(
+        self.size_fgpage = PHONE_WIDTH - 140  # Set size of the profile page
+        self.content = ft.Column(  # Main content column
             controls=[
-                self.init_ui_backnav(),
-                self.init_ui_userinfo(),
+                self.init_ui_backnav(),  # Initialize UI for back navigation
+                self.init_ui_userinfo(),  # Initialize UI for user information
             ]
         )
-        #* Get data user
-    
-    def restore(self, e):
+
+    def restore(self, e):  # Method to restore UI
         self.master.restore(e)
 
-    def init_ui_backnav(self):
-        self.ui_backnav = ft.Row(
+    def init_ui_backnav(self):  # Method to initialize UI for back navigation
+        '''
+            Author: : Đinh Thành Đức
+            ID: 21110765
+        '''
+        self.ui_backnav = ft.Row(  # Row layout for back navigation
             controls=[
-                ft.Container(
-                    border_radius=25,
-                    padding=ft.padding.only(
-                    top=8,left=13,),
-                    height=50,
-                    width=50,
-                    border=ft.border.all(color='white',width=1),
-                    on_click=lambda e: self.restore(e),
-                    content=ft.Text('<', size=20, color=PRIORITY)
+                ft.Container(  # Container for back button
+                    border_radius=25,  # Border radius for the container
+                    padding=ft.padding.only(top=8, left=13),  # Padding for the container
+                    height=50,  # Height of the container
+                    width=50,  # Width of the container
+                    border=ft.border.all(color='white', width=1),  # Border settings for the container
+                    on_click=lambda e: self.restore(e),  # Click event handler for restoring
+                    content=ft.Text('<', size=20, color=PRIORITY)  # Text content for the back button
                 )
             ],
-            alignment='end'
+            alignment='end'  # Alignment settings for the row
         )
 
-        return self.ui_backnav
-    
-    def init_ui_userinfo(self):
-        style_button_nav = {
-            'color': PRIORITY,
-            'bgcolor': BG,
-            'on_hover': self.on_hover_btnmenubar,
-            'width': 160,
-            'height': 35,
+        return self.ui_backnav  # Return the back navigation UI
+
+    def init_ui_userinfo(self):  # Method to initialize UI for user information
+        '''
+            Author: Nguyễn Phương Anh Tú
+            ID: 21110105
+        '''
+        style_button_nav = {  # Style settings for navigation buttons
+            'color': PRIORITY,  # Text color
+            'bgcolor': BG,  # Background color
+            'on_hover': self.on_hover_btnmenubar,  # Hover event handler
+            'width': 160,  # Width of the buttons
+            'height': 35,  # Height of the buttons
         }
 
-
+        # User information column
         self.ui_userinfo = ft.Column(
             controls=[
-                CircleCustom,
-                ft.Text(
-                    value="Chào mừng bạn quay trở lại, "+ AuthHook.get_user()['username'],
-                    size=20,
-                    color=PRIORITY,
+                CircleCustom,  # Custom circle UI component
+                ft.Text(  # Text component for user greeting
+                    value="Chào mừng bạn quay trở lại, " + AuthHook.get_user()['username'],  # Greeting message
+                    size=20,  # Font size
+                    color=PRIORITY,  # Text color
                 ),
-                #* Div wrap button, nghĩ đơn giản là div chứa button đang dùng flex
-                ft.Column(
+                ft.Column(  # Column layout for navigation buttons
                     controls=[
-                        ft.Column(
+                        ft.Column(  # Column layout for primary navigation buttons
                             controls=[
-                                ft.ElevatedButton(
-                                    text="Trang chủ",
-                                    icon=ft.icons.HOME,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.page.go('/')
+                                ft.ElevatedButton(  # Button for home page navigation
+                                    text="Trang chủ",  # Button text
+                                    icon=ft.icons.HOME,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.page.go('/')  # Click event handler
                                 ),
-                                ft.ElevatedButton(
-                                    text="Khóa học",
-                                    icon=ft.icons.BOOKMARK,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.page.go('/course/3')
+                                ft.ElevatedButton(  # Button for course page navigation
+                                    text="Khóa học",  # Button text
+                                    icon=ft.icons.BOOKMARK,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.page.go('/course/3')  # Click event handler
                                 ),
-                                ft.ElevatedButton(
-                                    text="Liên hệ",
-                                    icon=ft.icons.MAIL,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.page.go('/contact'),
+                                ft.ElevatedButton(  # Button for contact page navigation
+                                    text="Liên hệ",  # Button text
+                                    icon=ft.icons.MAIL,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.page.go('/contact')  # Click event handler
                                 ),
-                                ft.ElevatedButton(
-                                    text="Bio",
-                                    icon=ft.icons.WORK_OUTLINE,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.page.go('/bio'),
+                                ft.ElevatedButton(  # Button for bio page navigation
+                                    text="Bio",  # Button text
+                                    icon=ft.icons.WORK_OUTLINE,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.page.go('/bio')  # Click event handler
                                 ),
-                                ft.ElevatedButton(
-                                    text="Dashboard",
-                                    icon=ft.icons.ADMIN_PANEL_SETTINGS,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.page.go('/dashboard'),
-                                ) if CommonAPI.check_admin_role() else ft.Text(''),
+                                ft.ElevatedButton(  # Button for dashboard page navigation (for admin)
+                                    text="Dashboard",  # Button text
+                                    icon=ft.icons.ADMIN_PANEL_SETTINGS,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.page.go('/dashboard')  # Click event handler
+                                ) if CommonAPI.check_admin_role() else ft.Text(''),  # Show only for admin
                             ]
                         ),
-                        ft.Column(
+                        ft.Column(  # Column layout for secondary navigation buttons
                             controls=[
-                                ft.ElevatedButton(
-                                    text="Đăng xuất",
-                                    icon=ft.icons.LOGOUT,
-                                    **style_button_nav,
-                                    on_click=lambda e: self.handle_logout(),
+                                ft.ElevatedButton(  # Button for logout
+                                    text="Đăng xuất",  # Button text
+                                    icon=ft.icons.LOGOUT,  # Button icon
+                                    **style_button_nav,  # Style settings
+                                    on_click=lambda e: self.handle_logout(),  # Click event handler
                                 ),
-                                ft.Container(
-                                    content=ft.Image(
-                                        src='admin/admin-logo.png',
-                                        height=80,
+                                ft.Container(  # Container for logo image
+                                    content=ft.Image(  # Image component
+                                        src='admin/admin-logo.png',  # Image source
+                                        height=80,  # Height of the image
                                     )
                                 ),
-                                ft.Row(
+                                ft.Row(  # Row layout for social media icons
                                     controls=[
-                                        ft.Container(
-                                            content=ft.Image(
-                                                src='admin/contact/github.png',
-                                                height=60
+                                        ft.Container(  # Container for GitHub icon
+                                            content=ft.Image(  # Image component
+                                                src='admin/contact/github.png',  # Image source
+                                                height=60  # Height of the image
                                             ),
-                                            on_click=lambda e: self.page.launch_url('https://github.com/8syncdev')
+                                            on_click=lambda e: self.page.launch_url('https://github.com/8syncdev')  # Click event handler
                                         ),
-                                        ft.Container(
-                                            content=ft.Image(
-                                                src='admin/contact/tiktok.png',
-                                                height=60
+                                        ft.Container(  # Container for TikTok icon
+                                            content=ft.Image(  # Image component
+                                                src='admin/contact/tiktok.png',  # Image source
+                                                height=60  # Height of the image
                                             ),
-                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')
+                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')  # Click event handler
                                         ),
-                                        ft.Container(
-                                            content=ft.Image(
-                                                src='admin/contact/web.png',
-                                                height=60
+                                        ft.Container(  # Container for Website icon
+                                            content=ft.Image(  # Image component
+                                                src='admin/contact/web.png',  # Image source
+                                                height=60  # Height of the image
                                             ),
-                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')
+                                            on_click=lambda e: self.page.launch_url('https://8syncdev.com/bio')  # Click event handler
                                         ),
                                     ],
-                                    alignment='center',
+                                    alignment='center',  # Alignment settings for the row
                                 )
                             ],
-                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # Horizontal alignment settings
                         ),
                     ],
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                    width=self.size_fgpage,
-                    alignment='spaceBetween',
-                    height=500,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # Horizontal alignment settings
+                    width=self.size_fgpage,  # Width of the column
+                    alignment='spaceBetween',  # Alignment settings
+                    height=500,  # Height of the column
                 )
             ]
         )
 
-        return self.ui_userinfo
-    
-    def on_hover_btnmenubar(self, e: ft.HoverEvent):
-        #* Get data from Main UI, Main UI control homepage control ui sections.
-        # self.master.container_homepage.all_ui_controls
-        e.control.bgcolor = BG_SEC1 if e.data=='true' else BG
-        e.control.icon_color = PRIORITY if e.data=='true' else BG_SEC1
-        e.control.update()
+        return self.ui_userinfo  # Return the user information UI
 
-    def handle_logout(self):
-        LocalStore.clear_all_files()
-        self.page.go('/sign-in')
-            
+    def on_hover_btnmenubar(self, e: ft.HoverEvent):  # Method to handle hover event for navigation buttons
+        '''
+            Author: Nguyễn Phương Anh Tú
+            ID: 21110105
+        '''
+        e.control.bgcolor = BG_SEC1 if e.data == 'true' else BG  # Change background color on hover
+        e.control.icon_color = PRIORITY if e.data == 'true' else BG_SEC1  # Change icon color on hover
+        # true' else BG_SEC1  # Change icon color on hover based on condition
+        e.control.update()  # Update the control
+
+    def handle_logout(self):  # Method to handle logout
+        '''
+            Author: Nguyễn Phương Anh Tú
+            ID: 21110105
+        '''
+        LocalStore.clear_all_files()  # Clear all stored files
+        self.page.go('/sign-in')  # Redirect to sign-in page
+
+

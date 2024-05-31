@@ -1,5 +1,9 @@
-
-
+'''
+    Author: Nguyễn Phương Anh Tú
+    ID: 21110105
+    Main Purpose:
+    => Define the constant variables for the project.
+'''
 MEMBERS = [
     {
         "name": "Nguyễn Phương Anh Tú",

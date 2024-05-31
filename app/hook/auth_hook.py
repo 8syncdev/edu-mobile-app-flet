@@ -1,10 +1,19 @@
-
-
+'''
+    Author: : Đinh Thành Đức
+    ID: 21110765
+    Author: : Lê Quốc Thắng
+    ID: 21110799
+'''
 from app.util import (
     LocalStore
 )
 
 class AuthHook:
+    '''
+        - set_authenticated(user): Marks the user as authenticated and sets user information.
+        - check_authenticated(): Returns whether a user is authenticated.
+        - get_user(): Retrieves user information either from the stored state or from the local store if not authenticated.
+    '''
     state = {
         'is_authenticated': False,
         'user': None,

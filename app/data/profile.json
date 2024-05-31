@@ -1,1 +1,10 @@
-{}
+{
+    "detail": "Get User By Token",
+    "data": {
+        "username": "testuser3",
+        "email": "tuan8165@gmail.com",
+        "phone": "111111111",
+        "last_login": null
+    },
+    "code": "res_success"
+}
