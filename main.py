@@ -135,8 +135,8 @@ def main(page: ft.Page):
         page.update()
 
     '''
-        Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        Author: : Đinh Thành Đức
+        ID: 21110765
         - page.on_route_change: Set the on_route_change event handler each time the route changes.
         - if page.route == "/": Check if the current route is the root route.
         - AuthAPI.check_auth(): Check if the user is authenticated.
