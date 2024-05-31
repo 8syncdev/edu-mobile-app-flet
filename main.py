@@ -1,6 +1,7 @@
 '''
     Author: Nguyễn Phương Anh Tú
     ID: 21110105
+    Main Tech: Flet to build Flutter-like UIs in Python for Mobile applications.
 '''
 '''
     Author: Nguyễn Phương Anh Tú
