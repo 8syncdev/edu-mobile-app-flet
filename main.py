@@ -1,7 +1,15 @@
 '''
     Author: Nguyễn Phương Anh Tú
     ID: 21110105
-    Main Tech: Flet to build Flutter-like UIs in Python for Mobile applications.
+    - UI: using Flet Framework to build Mobile App (build Flutter App) - language Python
+    - Back End: using Django Framework to build Server Side API and apply model AI sentiment - language Python
+    - Database: using PostgreSQL to store data, register FREE on render: https://render.com/
+    - Hosting: using Render to deploy Django API and PostgreSQL Database: https://render.com/
+    - Model AI Sentiment intergrated in Back End: using underthesea library to build model AI Sentiment - language Python: https://github.com/undertheseanlp/underthesea
+    - Source Code of Team: https://github.com/8syncdev/edu-mobile-app-flet
+    - Read detail in here: 
+        - /README.md
+        - /README.pdf
 '''
 '''
     Author: Nguyễn Phương Anh Tú
@@ -11,6 +19,7 @@
 - from app import (PHONE_HEIGHT, PHONE_WIDTH, BASE_DIR, TURN_ON_SCREEN): - Import constants from the app module. These constants likely define the dimensions of a phone and a base directory path.
 - from app.style import *: Import all definitions from the app.style module, which presumably contains style-related configurations.
 - from app.api import (AuthAPI): Import the AuthAPI class or module from app.api, likely used for authentication-related API calls.
+
 '''
 import flet as ft
 from app.screens import (

@@ -182,7 +182,7 @@ class MainPage(ft.Container):
                                     ft.ElevatedButton(
                                         text="Xem chi tiết",
                                         color=BG_SEC1,
-                                        on_click=lambda e, id=item_card.get('id'): self.page.go(f'/course/{id}')
+                                        on_click=lambda e, id=item_card.get('id'): self.page.go(f'/course/{id}?page=1')
                                     )
                                 ],
                                 alignment=ft.MainAxisAlignment.END,
@@ -224,16 +224,36 @@ class MainPage(ft.Container):
 
     def init_ui_all_lessons_of_courses(self):
         '''
-            Author: : Lê Quốc Thắng
+            Author: Nguyên Phương Anh Tú
+            ID: 21110105
+            Author: Lê Quốc Thắng
             ID: 21110799
             Main Purpose:
             => Initialize the UI for displaying all lessons of a course.
         '''
+        # Extract the page query and course ID from the page route
+        page_query = int(self.page.query.get('page'))
         # Extract the ID of the course from the page route
-        get_id = int(self.page.route.split('/')[-1])
+        get_id = int(self.page.route.split('/')[-1].split('?')[0])
         
         # Retrieve data of all lessons for the given course ID from the CourseAPI
-        data_all_lessons = CourseAPI.get_all_lessons_of_course(get_id).get('results')
+        data_fetch = CourseAPI.get_all_lessons_of_course(get_id, page_query)
+        data_all_lessons = data_fetch.get('results')
+        total_lessons = data_fetch.get('count')
+        pagination = math.ceil(total_lessons / 10)
+
+        # Create UI Pagination
+        pagination_ui_course = ft.Row(
+            controls=[
+                ft.ElevatedButton(
+                    text=f"{i}",
+                    color=BG_SEC1,
+                    on_click=lambda e, i=i: self.page.go(f'/course/{get_id}?page={i}')
+                )
+                for i in range(1, pagination + 1)
+            ],
+            alignment='center',
+        )
 
         # Create list of card items representing each lesson
         list_card_items = [
@@ -470,6 +490,7 @@ class MainPage(ft.Container):
                 ft.ListView(
                     controls=[
                         *list_card_items,
+                        pagination_ui_course,
                         self.ui_comment,
                         self.ui_show_comments
                     ],
@@ -621,6 +642,7 @@ class MainPage(ft.Container):
                     ],
                     alignment='spaceBetween',
                     vertical_alignment='center',
+                    wrap=True,
                 ),
                 # Text showing last update time
                 ft.Text(

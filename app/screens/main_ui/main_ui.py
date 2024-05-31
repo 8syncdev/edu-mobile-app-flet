@@ -87,7 +87,7 @@ class MainUI(ft.Container):
                     )
                 ),
                 ft.Container(  # Create a container for the bookmark icon
-                    on_click=lambda e: self.page.go('/course/3'),  # Set the click action to navigate to the course page
+                    on_click=lambda e: self.page.go('/course/3?page=1'),  # Set the click action to navigate to the course page
                     content=ft.Icon(
                         ft.icons.BOOKMARK,
                         **style_navbarbottom
