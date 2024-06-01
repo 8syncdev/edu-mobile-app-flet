@@ -63,6 +63,8 @@ def main(page: ft.Page):
     
 
     '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
         Author: : Đinh Thành Đức
         ID: 21110765
         - app_router: A list of routes for the main application.
