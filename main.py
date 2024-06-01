@@ -123,7 +123,7 @@ def main(page: ft.Page):
                 ],
                 **view_style
             ))
-        elif page.route in app_router:
+        elif page.route in app_router: #* Check if the current route is in the app_router list
             '''
                 Author: Nguyễn Phương Anh Tú
                 ID: 21110105

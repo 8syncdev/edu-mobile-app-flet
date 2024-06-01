@@ -98,6 +98,17 @@ class AuthAPI:
         return response.json()
     
     @staticmethod
+    def sign_in(payload: dict):
+        '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
+        Sends a POST request to sign in a user with the provided payload. Returns the server response.
+        '''
+        response = post(f'{DOMAIN_API}/api-view/sign-in/', json=payload)
+        return response.json()
+
+    
+    @staticmethod
     def forgot_password(payload: dict):
         '''
         Author: : Đinh Thành Đức
@@ -106,5 +117,40 @@ class AuthAPI:
         '''
         response = get(f'{DOMAIN_API}/api-view/common/forgot-password/', json=payload)
         return response.json()
+    
+    @staticmethod
+    def refresh_token(refresh_token: str):
+        '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
+        Sends a POST request to refresh the token using the provided refresh token. Returns the server response.
+        '''
+        response = post(f'{DOMAIN_API}/api/token/refresh/', json={'refresh': refresh_token})
+        return response.json()
+    
+    @staticmethod
+    def auth_by_email(email: str):
+        '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
+        Sends a POST request to authenticate a user by email. Returns the server response.
+        '''
+        response = post(f'{DOMAIN_API}/api-view/token/', json={'email': email})
+        return response.json()
+    
+    @staticmethod
+    def check_token_of_email(token: str):
+        '''
+        Author: Nguyễn Phương Anh Tú
+        ID: 21110105
+        Sends a POST request to check the token of an email. Returns the server response.
+        '''
+        response = get(f'{DOMAIN_API}/api-view/token/', headers={
+            'Authorization' : f'TokenByAnhTuDev {token}'
+        })
+        return response.json()
+    
+    
+        
 
     

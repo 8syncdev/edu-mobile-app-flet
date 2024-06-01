@@ -78,3 +78,11 @@ class CommonAPI:
             return response.json().get('code')=='res_success'
         except:
             return False
+        
+    @staticmethod
+    def sentiment_model(text: str) -> Dict[str, Any]:
+        '''
+        Sends a POST request to the sentiment analysis model API to analyze the sentiment of the provided text. Returns the server response.
+        '''
+        response = post(f'https://django-test-sentiment.onrender.com/api/sentiment', json={'text': text})
+        return response.json()

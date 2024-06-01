@@ -172,7 +172,7 @@ class FgPage(ft.Container):
                                     text="Khóa học",  # Button text
                                     icon=ft.icons.BOOKMARK,  # Button icon
                                     **style_button_nav,  # Style settings
-                                    on_click=lambda e: self.page.go('/course/3')  # Click event handler
+                                    on_click=lambda e: self.page.go('/course/3?page=1')  # Click event handler
                                 ),
                                 ft.ElevatedButton(  # Button for contact page navigation
                                     text="Liên hệ",  # Button text

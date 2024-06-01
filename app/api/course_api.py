@@ -68,4 +68,26 @@ class CourseAPI:
         '''
         response = get(f'{DOMAIN_API}/detail-lessons/{lesson_id}/')
         return response.json()
+    
+    @staticmethod
+    def get_all_exercise_by_slug(slug: str) -> Any:
+        '''
+            Author: Nguyễn Phương Anh Tú
+            ID: 21110105
+            Sends a GET request to retrieve all exercises of a specific lesson. Returns the server response as a list of ExerciseResponse objects
+        '''
+        response = get(f'{DOMAIN_API}/exercises/get-all-exercise-by-name?slugTagName={slug}')
+        return response.json()
+    
+    @staticmethod
+    def get_one_detail_exercise(exercise_id: int) -> Any:
+        '''
+            Author: Nguyễn Phương Anh Tú
+            ID: 21110105
+            Sends a GET request to retrieve the details of a specific exercise. Returns the server response as a ExerciseResponse object
+        '''
+        response = get(f'{DOMAIN_API}/exercises/{exercise_id}/')
+        return response.json()
+
+
 

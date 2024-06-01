@@ -381,6 +381,7 @@ class MainPage(ft.Container):
                             color=PRIORITY,
                             size=14,
                             italic=True,
+                            no_wrap=False,
                         ),
                         ft.Text(
                             value=f"{datetime.fromisoformat(item_comment.get('created_at')).strftime('%d/%m/%Y %H:%M')}",
@@ -390,6 +391,8 @@ class MainPage(ft.Container):
                         ),
                     ],
                     alignment='spaceBetween',
+                    wrap=True,
+                    width=PHONE_WIDTH
                 ),
                 padding=ft.padding.all(10),
                 bgcolor=WRAPPER,
@@ -436,6 +439,7 @@ class MainPage(ft.Container):
                                 color=PRIORITY,
                                 size=14,
                                 italic=True,
+                                no_wrap=False,
                             ),
                             ft.Text(
                                 value=f"{datetime.fromisoformat(item_comment.get('created_at')).strftime('%d/%m/%Y %H:%M')}",
@@ -445,6 +449,8 @@ class MainPage(ft.Container):
                             ),
                         ],
                         alignment='spaceBetween',
+                        wrap=True,
+                        width=PHONE_WIDTH
                     ),
                     padding=ft.padding.all(10),
                     bgcolor=WRAPPER,
