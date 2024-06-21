@@ -1,6 +1,6 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     - UI: using Flet Framework to build Mobile App (build Flutter App) - language Python
     - Back End: using Django Framework to build Server Side API and apply model AI sentiment - language Python
     - Database: using PostgreSQL to store data, register FREE on render: https://render.com/
@@ -13,7 +13,7 @@
 '''
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
 - flet as ft: Import the Flet library, used for building GUI applications.
 - from app.screens import (AuthUI, MainUI): Import AuthUI and MainUI classes from the app.screens module. These are likely custom UI components for authentication and main screens.
 - from app import (PHONE_HEIGHT, PHONE_WIDTH, BASE_DIR, TURN_ON_SCREEN): - Import constants from the app module. These constants likely define the dimensions of a phone and a base directory path.
@@ -42,7 +42,7 @@ from app.api import (
 def main(page: ft.Page):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
         - main(page: ft.Page): The main function which initializes the app.
         - page.window_top and page.window_left: Set the position of the app window.
         - page.window_width and page.window_height: Set the size of the window based on the constants PHONE_WIDTH and PHONE_HEIGHT. These dimensions adjust if TURN_ON_SCREEN is True.
@@ -64,9 +64,9 @@ def main(page: ft.Page):
 
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
-        Author: : Đinh Thành Đức
-        ID: 21110765
+        
+        
+        
         - app_router: A list of routes for the main application.
         - auth_router: A list of routes related to authentication
     '''
@@ -89,11 +89,11 @@ def main(page: ft.Page):
     def route_change(event: ft.RouteChangeEvent):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Đinh Thành Đức
-            ID: 21110765
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
+            
+            
             - route_change(event: ft.RouteChangeEvent): A function that is called each time the route changes.
             - page.views.clear(): Clear the views on the page.
             - page.overlay.clear(): Clear the overlay on the page.
@@ -109,14 +109,14 @@ def main(page: ft.Page):
         if len(page.overlay) > 0: #* Check if overlay is not empty
             '''
                 Author: Nguyễn Phương Anh Tú
-                ID: 21110105
+                
             '''
             page.overlay.clear()
         troute = ft.TemplateRoute(page.route)
         if page.route in auth_router: #* Check if the current route is in the auth_router list
             '''
                 Author: Nguyễn Phương Anh Tú
-                ID: 21110105
+                
             '''
             page.views.append(ft.View(
                 page.route,
@@ -128,7 +128,7 @@ def main(page: ft.Page):
         elif page.route in app_router: #* Check if the current route is in the app_router list
             '''
                 Author: Nguyễn Phương Anh Tú
-                ID: 21110105
+                
             '''
             page.views.append(ft.View(
                 page.route,
@@ -140,8 +140,8 @@ def main(page: ft.Page):
         #* Extent Dynamic Route
         elif troute.match('/course/:course_id'): #* Check if the route matches a course ID
             '''
-                Author: : Lê Quốc Thắng
-                ID: 21110799
+                
+                
             '''
             page.views.append(ft.View(
                 f"/course/{troute.course_id}",
@@ -152,8 +152,8 @@ def main(page: ft.Page):
             ))
         elif troute.match('/lesson/:lesson_id'): #* Check if the route matches a lesson ID
             '''
-                Author: : Đinh Thành Đức
-                ID: 21110765
+                
+                
             '''
             page.views.append(ft.View(
                 f"/lesson/{troute.lesson_id}",
@@ -164,8 +164,8 @@ def main(page: ft.Page):
             ))
         elif troute.match('/detail-lesson/:detail_lesson_id'): #* Check if the route matches a detail lesson ID
             '''
-                Author: : Đinh Thành Đức
-                ID: 21110765
+                
+                
             '''
             page.views.append(ft.View(
                 f"/detail-lesson/{troute.detail_lesson_id}",
@@ -177,8 +177,8 @@ def main(page: ft.Page):
         page.update()
 
     '''
-        Author: : Đinh Thành Đức
-        ID: 21110765
+        
+        
         - page.on_route_change: Set the on_route_change event handler each time the route changes.
         - if page.route == "/": Check if the current route is the root route.
         - AuthAPI.check_auth(): Check if the user is authenticated.

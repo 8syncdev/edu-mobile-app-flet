@@ -1,6 +1,6 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     The main purpose of this code is to configure the app by setting up directory paths, defining base sizes for a phone UI, and loading environment variables from a .env file.
 '''
 #* import flet as ft: Imports the Flet library, which is used for building GUI applications.
@@ -9,7 +9,7 @@ import flet as ft
 
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     - import pathlib: Imports the pathlib module, which provides an object-oriented interface for working with filesystem paths.
     - BASE_DIR = pathlib.Path(__file__).resolve().parent.parent: Defines BASE_DIR as the parent directory of the current script's parent directory. This is typically used to set a base directory for relative paths in the application.
 '''
@@ -20,7 +20,7 @@ BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     - PHONE_WIDTH = 400: Sets the base width for the phone UI to 400 pixels.
     - PHONE_HEIGHT = 850: Sets the base height for the phone UI to 850 pixels.
 '''
@@ -33,7 +33,7 @@ PHONE_HEIGHT = 850
 
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
 - API_BE = os.getenv('API_BE'): Retrieves the API_BE environment variable from the loaded .env file. This variable typically holds the backend API endpoint.
 - DOMAIN_BE = os.getenv('DOMAIN_BE'): Retrieves the DOMAIN_BE environment variable, which likely represents the base domain for the backend.
 - DOMAIN_API = f'{DOMAIN_BE}/{API_BE}': Constructs the full API domain URL by combining DOMAIN_BE and API_BE.

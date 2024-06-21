@@ -1,6 +1,6 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     Main Purpose: Test all API functions in the app
 '''
 from app.api import (
@@ -29,7 +29,7 @@ def print_color(text, color_code):
 class TestAuthenticationAPI(unittest.TestCase):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
         Main Purpose: Test all API functions in the app
     '''
     # Class variables to control whether certain tests are active
@@ -175,7 +175,7 @@ class TestAuthenticationAPI(unittest.TestCase):
 class TestCommonAPI(unittest.TestCase):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
         Main Purpose: Test all API functions in the app
     '''
     def test_sentiment_model(self):
@@ -256,7 +256,7 @@ class TestCommonAPI(unittest.TestCase):
 class TestCourseAPI(unittest.TestCase):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
         Main Purpose: Test all API functions in the app
     '''
     def test_get_all_courses(self):

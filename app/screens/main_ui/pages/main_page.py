@@ -1,10 +1,10 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     Author: Đinh Thành Đức
-    ID: 21110765
+    
     Author: Lê Quốc Thắng
-    ID: 21110799
+    
 '''
 # Importing specific elements from the 'app' module
 from app import (
@@ -64,7 +64,7 @@ from app.constant import (
 class MainPage(ft.Container):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
     '''
 
     # Constructor method
@@ -112,8 +112,8 @@ class MainPage(ft.Container):
 
     def shrink(self, e):
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
+            
+            
             Main Purpose:
             => Call the shrink method of the parent class (MainUI class)
         '''
@@ -121,8 +121,8 @@ class MainPage(ft.Container):
 
     def init_ui_navbar(self):
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
+            
+            
             Main Purpose:
             => Call the init_ui_navbar method of the parent class (MainUI class)
         '''
@@ -131,9 +131,9 @@ class MainPage(ft.Container):
     def init_ui_intro_content(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Đinh Thành Đức
-            ID: 21110765
+            
+            
+            
         '''
         # Retrieve all courses data from the CourseAPI
         data_all_courses = CourseAPI.get_all_courses().get('results')
@@ -225,9 +225,9 @@ class MainPage(ft.Container):
     def init_ui_all_lessons_of_courses(self):
         '''
             Author: Nguyên Phương Anh Tú
-            ID: 21110105
+            
             Author: Lê Quốc Thắng
-            ID: 21110799
+            
             Main Purpose:
             => Initialize the UI for displaying all lessons of a course.
         '''
@@ -304,8 +304,8 @@ class MainPage(ft.Container):
         # Define event handler function to send comment
         def handle_send_comment(e):
             '''
-                Author: : Lê Quốc Thắng
-                ID: 21110799
+                
+                
             '''
             try:
                 # Disable the send button and update UI
@@ -337,7 +337,7 @@ class MainPage(ft.Container):
 
         # Build UI elements for comment field and send button
         comment_field = ft.TextField(
-            hint_text="Bình luận (có thể xuống hàng)",
+            hint_text="Comment (can downgrade)",
             multiline=True,
             border_color=BG_SEC1,
             width=250,
@@ -405,10 +405,10 @@ class MainPage(ft.Container):
         # Define event handler function for pagination
         def handle_route_comment_page(e, i):
             '''
-                Author: : Đinh Thành Đức
-                ID: 21110765
-                Author: : Lê Quốc Thắng
-                ID: 21110799
+                
+                
+                
+                
             '''
             # Retrieve comments data for the given page number
             data_all_comments = CommonAPI.get_all_comments(i).get('data')
@@ -513,7 +513,7 @@ class MainPage(ft.Container):
     def init_ui_all_detail_lessons_of_lesson(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
+            
         '''
         # Extract the page query and lesson ID from the page route
         page_query = int(self.page.query.get('page'))
@@ -607,8 +607,8 @@ class MainPage(ft.Container):
     
     def init_ui_detail_one_lesson(self):
         '''
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
         '''
         # Extract the lesson ID from the page route
         get_id = int(self.page.route.split('/')[-1])
@@ -679,10 +679,10 @@ class MainPage(ft.Container):
     
     def init_ui_contactpage(self):
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
+            
             Main Purpose:
             - It defines an event handler function handle_send_contact to send the contact message to the backend via CommonAPI.
             - It defines a function validate_email to validate the email format (not currently used).
@@ -775,10 +775,10 @@ class MainPage(ft.Container):
     
     def init_ui_biopage(self):
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
+            
         '''
         # Generate list of card items representing each member's biography
         list_card_items = [
@@ -862,7 +862,7 @@ class MainPage(ft.Container):
     def init_ui_dashboard(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
+            
             Main Purpose:
             - It retrieves sentiment analysis data from the backend using CommonAPI.
             - It extracts data for positive, negative, and neutral comments.
@@ -928,26 +928,26 @@ class MainPage(ft.Container):
             border=ft.border.all(color=BG_SEC1, width=1), # Border style of the chart
             left_axis=ft.ChartAxis( # Define the left axis of the chart
                 labels_size=40,
-                title=ft.Text("Số lượng comments"),
+                title=ft.Text("Number of Comments"), # Title of the left axis
                 title_size=20,
             ),
             bottom_axis=ft.ChartAxis( # Define the bottom axis of the chart
                 labels=[
                     ft.ChartAxisLabel(
                         label=ft.Container(
-                            content=ft.Text("Tích cực"),
+                            content=ft.Text("Positive"),
                         ),
                         value=0,
                     ),
                     ft.ChartAxisLabel(
                         label=ft.Container(
-                            content=ft.Text("Tiêu cực"),
+                            content=ft.Text("Negative"),
                         ),
                         value=1,
                     ),
                     ft.ChartAxisLabel(
                         label=ft.Container(
-                            content=ft.Text("Trung lập"),
+                            content=ft.Text("Neutral"),
                         ),
                         value=2,
                     ),
@@ -968,7 +968,7 @@ class MainPage(ft.Container):
         def on_chart_event(e: ft.PieChartEvent):
             '''
                 Author: Nguyễn Phương Anh Tú
-                ID: 21110105
+                
                 Main Purpose:
                 - It defines an event handler for chart section hover events.
                 - It updates the border style of the chart sections based on the hover event.
@@ -982,7 +982,7 @@ class MainPage(ft.Container):
         def handle_change_chart_type(e):
             '''
                 Author: Nguyễn Phương Anh Tú
-                ID: 21110105
+                
                 Main Purpose:
                 - It defines an event handler for changing the chart type.
                 - It updates the chart type based on the selected value.
@@ -998,7 +998,7 @@ class MainPage(ft.Container):
                             border_side=normal_border,
                             radius=150,
                             title=f'{
-                                "Tích cực" if data.get("index") == 0 else "Tiêu cực" if data.get("index") == 1 else "Trung lập"
+                                "Positive" if data.get("index") == 0 else "Negative" if data.get("index") == 1 else "Neutrual"
                             }: {data.get("total")/total_comments*100:.2f}%',
                             badge=ft.Container(
                                 content=ft.Icon(
@@ -1025,14 +1025,14 @@ class MainPage(ft.Container):
         self.ui_dashboard = ft.Column(
             controls=[
                 ft.Text(
-                    value="Dashboard Sử Dụng Sentiment Analysis AI",
+                    value="Dashboard using Sentiment Analysis RoBERTa Fine Tuning Model",
                     color=BG_SEC1,
                     size=25,
                     font_family='Roboto',
                     italic=True,
                 ),
                 ft.Text(
-                    value="Trang quản trị của Admin, dùng để xem tổng quan về cảm xúc của người dùng thông qua comments",
+                    value="Analyze the sentiment of comments using RoBERTa fine-tuning model",
                     color=MUTED,
                     size=12,
                     italic=True,
@@ -1072,8 +1072,8 @@ class MainPage(ft.Container):
 
     def init_ui_faqpage(self):
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
+            
+            
             Main Purpose:
             - It creates a Column layout using the Fluent UI components. This layout consists of a series of Text components containing the FAQ content.
             - Each FAQ question is followed by an answer. Both the question and the answer are represented by Text components.
@@ -1155,7 +1155,7 @@ class MainPage(ft.Container):
     def init_ui_profilepage(self):
         '''
             Author: : Nguyễn Phương Anh Tú
-            ID: 21110105
+            
             Main Purpose:
             - It retrieves user profile data from the local store using the LocalStore.get_data method. The data contains information such as username, email, phone number, and last login time.
             - It constructs a Column layout using the Fluent UI components to display the user's profile information.
@@ -1218,11 +1218,11 @@ class MainPage(ft.Container):
         ):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Đinh Thành Đức
-            ID: 21110765
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
+            
+            
         '''
         '''
             Static Route dùng để test nhanh UI, khi không có sự chuyển trang, giúp ta không query lên server của team BE.

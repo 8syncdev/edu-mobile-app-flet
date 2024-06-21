@@ -1,6 +1,6 @@
 '''
     Author: Đinh Thành Đức
-    ID: 21110765
+    
     Main Purpose:
     => Define the style of the application.
 '''

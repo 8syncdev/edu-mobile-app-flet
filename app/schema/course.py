@@ -1,6 +1,6 @@
 '''
 Author: Nguyễn Phương Anh Tú
-ID: 21110105
+
 '''
 from typing import Optional, Literal, Dict, List
 

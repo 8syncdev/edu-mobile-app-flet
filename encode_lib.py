@@ -1,6 +1,6 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     Main Purpose:
     => Fix error when reading and rewriting a requirements.txt file with different encodings to package libraries for project dependencies.
 '''

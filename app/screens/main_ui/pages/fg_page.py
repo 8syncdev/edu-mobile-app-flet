@@ -27,7 +27,7 @@ from app.api import (  # Importing CommonAPI module from the app package
 
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     Main Purpose:
     => Define the custom UI components for avatar of the user profile.
 '''
@@ -83,7 +83,7 @@ CircleCustom = ft.Stack(
 class FgPage(ft.Container):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
+        
         Main Purpose:
         => Define the custom UI component for the profile page.
     '''
@@ -116,8 +116,8 @@ class FgPage(ft.Container):
 
     def init_ui_backnav(self):  # Method to initialize UI for back navigation
         '''
-            Author: : Đinh Thành Đức
-            ID: 21110765
+            
+            
         '''
         self.ui_backnav = ft.Row(  # Row layout for back navigation
             controls=[
@@ -139,7 +139,7 @@ class FgPage(ft.Container):
     def init_ui_userinfo(self):  # Method to initialize UI for user information
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
+            
         '''
         style_button_nav = {  # Style settings for navigation buttons
             'color': PRIORITY,  # Text color
@@ -251,7 +251,7 @@ class FgPage(ft.Container):
     def on_hover_btnmenubar(self, e: ft.HoverEvent):  # Method to handle hover event for navigation buttons
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
+            
         '''
         e.control.bgcolor = BG_SEC1 if e.data == 'true' else BG  # Change background color on hover
         e.control.icon_color = PRIORITY if e.data == 'true' else BG_SEC1  # Change icon color on hover
@@ -261,7 +261,7 @@ class FgPage(ft.Container):
     def handle_logout(self):  # Method to handle logout
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
+            
         '''
         LocalStore.clear_all_files()  # Clear all stored files
         self.page.go('/sign-in')  # Redirect to sign-in page

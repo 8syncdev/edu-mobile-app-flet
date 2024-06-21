@@ -1,8 +1,8 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
-    Author: : Lê Quốc Thắng
-    ID: 21110799
+    
+    
+    
 '''
 
 # Importing necessary type hints from typing module

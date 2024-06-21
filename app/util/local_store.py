@@ -1,8 +1,8 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
+    
     Co-op with: Đinh Thành Đức
-    ID: 21110765
+    
     Main Purpose:
     => The main purpose of this code is to create a local storage system that can read, write, and clear JSON data files. This is useful for persisting data such as tokens or configuration settings locally on the filesystem.
 '''

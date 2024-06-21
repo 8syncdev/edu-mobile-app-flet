@@ -10,9 +10,9 @@ from app.util import LocalStore
 class AuthUI(ft.Container):
     '''
         Author: Nguyễn Phương Anh Tú
-        ID: 21110105
-        Author: : Lê Quốc Thắng
-        ID: 21110799
+        
+        
+        
         Main Purpose:
         => Define the authentication user interface of the application.
     '''
@@ -41,9 +41,9 @@ class AuthUI(ft.Container):
     def init_form(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
         '''
         # Initialize UI elements for form inputs
         self.signin_text = ft.Text(
@@ -192,9 +192,9 @@ class AuthUI(ft.Container):
     def on_submit(self, event):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
         '''
         # Determine action based on page route
         if self.page.route == '/sign-up':
@@ -208,9 +208,9 @@ class AuthUI(ft.Container):
     def handle_signin(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
         '''
         # Disable button and show loading indicator
         self.signin_btn.visible = False
@@ -248,9 +248,9 @@ class AuthUI(ft.Container):
     def handle_signup(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
         '''
         # Disable button and show loading indicator
         self.signin_btn.visible = False
@@ -282,9 +282,9 @@ class AuthUI(ft.Container):
     def handle_forgot_password(self):
         '''
             Author: Nguyễn Phương Anh Tú
-            ID: 21110105
-            Author: : Lê Quốc Thắng
-            ID: 21110799
+            
+            
+            
         '''
         # Disable button and show loading indicator
         self.signin_btn.visible = False

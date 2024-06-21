@@ -1,8 +1,8 @@
 '''
     Author: Nguyễn Phương Anh Tú
-    ID: 21110105
-    Author: : Đinh Thành Đức
-    ID: 21110765
+    
+    
+    
 '''
 from typing import (
     Optional,

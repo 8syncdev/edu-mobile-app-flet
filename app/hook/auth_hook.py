@@ -1,8 +1,8 @@
 '''
-    Author: : Đinh Thành Đức
-    ID: 21110765
-    Author: : Lê Quốc Thắng
-    ID: 21110799
+    
+    
+    
+    
 '''
 from app.util import (
     LocalStore
