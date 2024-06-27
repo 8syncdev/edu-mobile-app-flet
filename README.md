@@ -2,7 +2,7 @@
 
 ## Team Dev
 
-- Nguyễn Phương Anh Tú (Leader)
+- Nguyễn Phương Anh Tú (Leader) | Admin | 0767449819
 - Đinh Thành Đức (Co-op)
 - Lê Quốc Thắng (Co-op)
 
